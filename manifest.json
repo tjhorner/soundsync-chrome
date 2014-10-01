@@ -1,0 +1,21 @@
+{
+	"manifest_version": 2,
+	"name": "Soundsync for Chrome",
+	"version": "1.0",
+
+	"description": "Control SoundCloud from your phone",
+	"options_page": "pages/options.html",
+
+	"permissions": [
+		"storage"
+	],
+
+	"web_accessible_resources": ["pages/options.html"],
+
+	"content_scripts": [
+		{
+			"matches": ["*://*.soundcloud.com/*", "*://soundcloud.com/*"],
+			"js": ["scripts/jquery.js", "scripts/socket.io.js", "scripts/soundsync.js"]
+		}
+	]
+}
